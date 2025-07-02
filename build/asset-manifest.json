@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b6672f78.css",
+    "main.js": "/static/js/main.bd03fdcc.js",
+    "static/js/239.c4f00478.chunk.js": "/static/js/239.c4f00478.chunk.js",
+    "static/js/977.aeb1d7e0.chunk.js": "/static/js/977.aeb1d7e0.chunk.js",
+    "static/js/455.7094cced.chunk.js": "/static/js/455.7094cced.chunk.js",
+    "static/media/nourishment.jpg": "/static/media/nourishment.fdc44db781d1564a8ea1.jpg",
+    "static/media/face-serum-hero-banner.jpg": "/static/media/face-serum-hero-banner.66871399f5f21d8dcc86.jpg",
+    "static/media/instant-glow.jpg": "/static/media/instant-glow.0d20978d78d943649745.jpg",
+    "static/media/face-serum.jpg": "/static/media/face-serum.f5e052645d65f0558c32.jpg",
+    "static/media/ozil-facewash.png": "/static/media/ozil-facewash.eb3b693af04971771c33.png",
+    "static/media/ozilmakeup_logo.png": "/static/media/ozilmakeup_logo.c0b847862798d5017784.png",
+    "index.html": "/index.html",
+    "main.b6672f78.css.map": "/static/css/main.b6672f78.css.map",
+    "main.bd03fdcc.js.map": "/static/js/main.bd03fdcc.js.map",
+    "239.c4f00478.chunk.js.map": "/static/js/239.c4f00478.chunk.js.map",
+    "455.7094cced.chunk.js.map": "/static/js/455.7094cced.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6672f78.css",
+    "static/js/main.bd03fdcc.js"
+  ]
+}

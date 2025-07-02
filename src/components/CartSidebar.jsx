@@ -8,17 +8,17 @@ import LoginModal from './LoginModal';
 const CartSidebar = ({ isOpen, onClose }) => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userMobileNumber, setUserMobileNumber] = useState('');
+  // const [userMobileNumber, setUserMobileNumber] = useState('');
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     const storedLoginStatus = localStorage.getItem('isLoggedIn');
-    const storedMobileNumber = localStorage.getItem('mobileNumber');
+    // const storedMobileNumber = localStorage.getItem('mobileNumber');
     if (storedLoginStatus === 'true') {
       setIsLoggedIn(true);
-      setUserMobileNumber(storedMobileNumber || '');
+      // setUserMobileNumber(storedMobileNumber || '');
     }
   }, []);
 
@@ -35,9 +35,9 @@ const CartSidebar = ({ isOpen, onClose }) => {
   };
 
  const handleProceedToCheckout = () => {
-    const storedLoginStatus = localStorage.getItem('isLoggedIn');
-    if (storedLoginStatus === 'true') {
-      setIsLoggedIn(true);
+    // const storedLoginStatus = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+      setIsLoggedIn(!isLoggedIn);
       navigate('/checkout');
     } else {
       setIsLoginModalOpen(true);
@@ -46,12 +46,15 @@ const CartSidebar = ({ isOpen, onClose }) => {
 
   const handleLogin = (mobileNumber) => {
     // Simulate login
-    console.log('User logged in with mobile number:', mobileNumber);
+    // console.log('User logged in with mobile number:', mobileNumber);
     setIsLoggedIn(true);
-    setUserMobileNumber(mobileNumber);
+    // setUserMobileNumber(mobileNumber);
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('mobileNumber', mobileNumber);
     // TODO: Implement proper authentication here
+    setIsLoginModalOpen(false);
+    navigate('/checkout');
+
   };
 
   const handleCloseLoginModal = () => {

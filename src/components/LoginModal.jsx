@@ -5,7 +5,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const LoginModal = ({ isOpen, onClose, onLogin }) => {
   const [mobileNumber, setMobileNumber] = useState("");
-  const [countryCode, setCountryCode] = useState("+91");
+  // const [countryCode, setCountryCode] = useState("+91");
   const [otp, setOtp] = useState("");
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [notifyMe, setNotifyMe] = useState(true);

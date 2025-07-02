@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -9,10 +10,10 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-lg mb-3">Know Us Better</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-rose-500">About Us</a></li>
-            <li><a href="#" className="hover:text-rose-500">Affiliate Program</a></li>
-            <li><a href="#" className="hover:text-rose-500">FAQ</a></li>
-            <li><a href="#" className="hover:text-rose-500">Blogs</a></li>
+            <li><Link to="/about" className="hover:text-rose-500">About Us</Link></li>
+            <li><Link to="/affiliate" className="hover:text-rose-500">Affiliate Program</Link></li>
+            <li><Link to="/faq" className="hover:text-rose-500">FAQ</Link></li>
+            <li><Link to="/blogs" className="hover:text-rose-500">Blogs</Link></li>
           </ul>
         </div>
 
@@ -20,11 +21,11 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-lg mb-3">Help</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-rose-500">Contact Us</a></li>
-            <li><a href="#" className="hover:text-rose-500">Grievance Officer</a></li>
-            <li><a href="#" className="hover:text-rose-500">Our Policies</a></li>
-            <li><a href="#" className="hover:text-rose-500">Terms & Conditions</a></li>
-            <li><a href="#" className="hover:text-rose-500">Terms Of Service</a></li>
+            <li><Link to="/contact" className="hover:text-rose-500">Contact Us</Link></li>
+            <li><Link to="/grievance" className="hover:text-rose-500">Grievance Officer</Link></li>
+            <li><Link to="/policies" className="hover:text-rose-500">Our Policies</Link></li>
+            <li><Link to="/terms" className="hover:text-rose-500">Terms & Conditions</Link></li>
+            <li><Link to="/tos" className="hover:text-rose-500">Terms Of Service</Link></li>
           </ul>
         </div>
 
@@ -32,11 +33,11 @@ const Footer = () => {
         <div>
           <h3 className="font-bold text-lg mb-3">Also Available On</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:text-rose-500">Nykaa</a></li>
-            <li><a href="#" className="hover:text-rose-500">Amazon</a></li>
-            <li><a href="#" className="hover:text-rose-500">Flipkart</a></li>
-            <li><a href="#" className="hover:text-rose-500">Myntra</a></li>
-            <li><a href="#" className="hover:text-rose-500">Purplle</a></li>
+            <li><a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500">Nykaa</a></li>
+            <li><a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500">Amazon</a></li>
+            <li><a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500">Flipkart</a></li>
+            <li><a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500">Myntra</a></li>
+            <li><a href="https://www.purplle.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-500">Purplle</a></li>
           </ul>
         </div>
 
@@ -57,13 +58,13 @@ const Footer = () => {
           {/* Social Media Icons */}
           <h3 className="font-bold text-lg mt-5">Follow Us</h3>
           <div className="flex space-x-3 mt-2">
-            <a href="#" className="p-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="py-2 px-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="#" className="p-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="py-2 px-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" className="p-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="py-2 px-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
               <i className="fab fa-youtube"></i>
             </a>
           </div>
@@ -72,7 +73,7 @@ const Footer = () => {
 
       {/* Copyright Section */}
       <div className="text-center text-gray-600 text-sm mt-8">
-        © 2025 Ozil Miraan solutions Pvt. Ltd. All Rights Reserved.
+        © 2025 Ozil Miraan Solutions Pvt. Ltd. All Rights Reserved.
       </div>
     </footer>
   );

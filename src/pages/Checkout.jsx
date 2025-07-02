@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import jsPDF from 'jspdf';
-import { CheckCircle, CreditCard, Wallet, Truck, Banknote, IndianRupee } from "lucide-react";
+
+import {  CreditCard, Wallet, Truck,  } from "lucide-react";
 import OrderConfirmationModal from '../components/OrderConfirmationModal';
 import { useState } from 'react';
 

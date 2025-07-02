@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/cartSlice';
 import products from '../data/products';
-import ReviewCard from '../components/ReviewCard';
+
 import ReviewCarousel from '../components/ReviewCarousel';
 import ProductCard from '../components/ProductCard';
 import CartSidebar from '../components/CartSidebar';
@@ -15,8 +15,8 @@ const ProductDetails = () => {
   const [zoomedImage, setZoomedImage] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userMobileNumber, setUserMobileNumber] = useState('');
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [userMobileNumber, setUserMobileNumber] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -36,19 +36,19 @@ const ProductDetails = () => {
     setIsCartOpen(!isCartOpen);
   };
 
-  const handleProceedToCheckout = () => {
-    if (isLoggedIn) {
-      navigate('/booking/payment');
-    } else {
-      setIsLoginModalOpen(true);
-    }
-  };
+  // const handleProceedToCheckout = () => {
+  //   if (isLoggedIn) {
+  //     navigate('/booking/payment');
+  //   } else {
+  //     setIsLoginModalOpen(true);
+  //   }
+  // };
 
   const handleLogin = (mobileNumber) => {
     // Simulate login
     console.log('User logged in with mobile number:', mobileNumber);
-    setIsLoggedIn(true);
-    setUserMobileNumber(mobileNumber);
+    // setIsLoggedIn(true);
+
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('mobileNumber', mobileNumber);
   };

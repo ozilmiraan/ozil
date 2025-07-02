@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// import {useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../redux/cartSlice';
+// import { addItem } from '../redux/cartSlice';
 import products from '../data/products';
 import CartSidebar from '../components/CartSidebar';
 import LoginModal from '../components/LoginModal';
@@ -11,32 +11,32 @@ import OzilLandingPage from './OzilLandingPage';
 
 const Layout = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    localStorage.getItem('isLoggedIn') === 'true'
-  );
-  const [userMobileNumber, setUserMobileNumber] = useState(
-    localStorage.getItem('mobileNumber') || ''
-  );
+  // const [isLoggedIn, setIsLoggedIn] = useState(
+  //   localStorage.getItem('isLoggedIn') === 'true'
+  // );
+  // const [userMobileNumber, setUserMobileNumber] = useState(
+  //   localStorage.getItem('mobileNumber') || ''
+  // );
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
   };
 
-  const handleProceedToCheckout = () => {
-    if (isLoggedIn) {
-      navigate('/booking/payment');
-    } else {
-      setIsLoginModalOpen(true);
-    }
-  };
+  // const handleProceedToCheckout = () => {
+  //   if (isLoggedIn) {
+  //     navigate('/booking/payment');
+  //   } else {
+  //     setIsLoginModalOpen(true);
+  //   }
+  // };
 
   const handleLogin = (mobileNumber) => {
-    console.log('User logged in with mobile number:', mobileNumber);
-    setIsLoggedIn(true);
-    setUserMobileNumber(mobileNumber);
+    // console.log('User logged in with mobile number:', mobileNumber);
+    // setIsLoggedIn(true);
+    // setUserMobileNumber(mobileNumber);
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('mobileNumber', mobileNumber);
     setIsLoginModalOpen(false);

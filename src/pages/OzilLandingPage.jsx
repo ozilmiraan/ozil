@@ -31,7 +31,7 @@ function OzilLandingPage() {
             className="w-48 sm:w-64 md:w-72 lg:w-80 h-auto rounded-lg
                        drop-shadow-xl  Standard drop shadow hover:shadow-glow-white transition-shadow duration-300 
                        transform 
-                      hover:scale-105 transition-transform duration-300 
+                      hover:scale-105
                        "
             style={{ filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.1))" }} // More controlled shadow
           />

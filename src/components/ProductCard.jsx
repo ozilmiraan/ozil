@@ -46,7 +46,7 @@ const ProductCard = ({ data,  dispatch, setIsCartOpen }) => {
                 Add to Cart
               </button>
               <button
-                className="bg-secondary text-white py-2 px-4 rounded-full  transition-colors duration-500  shadow-neumorphic hover:bg-secondary-dark hover:scale-110 "
+                className="bg-secondary text-white py-2 px-4 rounded-full transition transform hover:scale-105  transition-colors duration-500  shadow-neumorphic hover:bg-secondary-dark "
                 onClick={(e) => {
                   e.preventDefault();
                   dispatch(addItem(data));

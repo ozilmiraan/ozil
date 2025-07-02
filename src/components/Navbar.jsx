@@ -32,12 +32,12 @@ const Navbar = ({ toggleCart }) => {
           <Link to="/" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary  focus:text-secondary active:text-secondary">
             Home
           </Link>
-          <Link to="/artists" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
+          {/**          <Link to="/artists" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
             Artists
           </Link>
           <Link to="/booking" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
             Booking
-          </Link>
+          </Link> */}
           <Link to="/contact" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
             Contact
           </Link>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { IndianRupee, Download, Truck } from "lucide-react";
 import jsPDF from 'jspdf';
@@ -31,6 +31,8 @@ const OrderHistory = () => {
     },
   ];
 
+  const [statusFilter, setStatusFilter] = useState("");
+
   const getStatusBadge = (status) => {
     const statusClasses = {
       Delivered: "bg-green-500",
@@ -55,6 +57,10 @@ const OrderHistory = () => {
     doc.save(`invoice_order_${order.id}.pdf`);
   };
 
+  const filteredOrders = statusFilter
+    ? orders.filter((order) => order.orderStatus === statusFilter)
+    : orders;
+
   return (
     <div className="container mx-auto mt-8">
       <motion.h1
@@ -66,7 +72,24 @@ const OrderHistory = () => {
         Order History
       </motion.h1>
 
-      {orders.map((order) => (
+      {/* Filter by Order Status */}
+      <div className="mb-4 flex justify-center">
+        <label htmlFor="statusFilter" className="mr-2">Filter by Status:</label>
+        <select
+          id="statusFilter"
+          className="border rounded px-2 py-1"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+        >
+          <option value="">All</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+
+      {filteredOrders.map((order) => (
         <motion.div
           key={order.id}
           className="bg-white shadow-lg rounded-lg p-6 mb-4 transition hover:shadow-xl relative"
@@ -82,6 +105,7 @@ const OrderHistory = () => {
           </h2>
           <div className="mb-4">
             <h3 className="text-lg font-semibold">Order Details:</h3>
+            <p>Order ID: {order.id}</p>
             {order.products.map((product, index) => (
               <p key={index}>
                 {product.name} x {product.quantity} - <IndianRupee className="inline-block w-4 h-4" />
@@ -108,11 +132,13 @@ const OrderHistory = () => {
             >
               <Download className="w-4 h-4" /> Download Invoice
             </button>
-            <button
-              className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 flex items-center gap-2"
-            >
-              <Truck className="w-4 h-4" /> Track Order
-            </button>
+            {order.trackingNumber && (
+              <button
+                className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-700 flex items-center gap-2"
+              >
+                <Truck className="w-4 h-4" /> Track Order
+              </button>
+            )}
           </div>
         </motion.div>
       ))}

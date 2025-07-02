@@ -7,6 +7,7 @@ import CartSidebar from '../components/CartSidebar';
 import LoginModal from '../components/LoginModal';
 import ProductCard from '../components/ProductCard';
 import ReviewCarousel from '../components/ReviewCarousel';
+import OzilLandingPage from './OzilLandingPage';
 
 const Layout = () => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ const Layout = () => {
         onClose={toggleCart}
         className="fixed top-0 right-0 w-96 h-screen bg-white shadow-md z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto"
       />
-      <section
+{/*       <section
         className="bg-[url(/src/assets/face-serum-hero-banner.jpg)] bg-center bg-cover bg-no-repeat py-20 text-white text-center"
       >
         <div className="container mx-auto">
@@ -66,8 +67,8 @@ const Layout = () => {
             Shop Now
           </button>
         </div>
-      </section>
-
+      </section> */}
+    <OzilLandingPage/>
       <section className="container mx-auto py-8">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Our Beauty Products

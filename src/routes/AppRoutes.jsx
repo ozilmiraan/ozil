@@ -16,19 +16,7 @@ import OrderManagement from "../pages/OrderManagement";
 
 const AppRoutes = () => (
   <Routes>
-    
-    {/**<Route path="/home" element={<Home />} />      
-      <Route path="/artists" element={<Artists />} />
-      <Route path="/artist/:id" element={<ArtistProfile />} />
-      <Route path="/booking" element={<Navigate to="/booking/service" />} />
-      <Route path="/booking/*" element={<BookingFlow />} />
-      <Route path="/booking/service" element={<Booking />} />
-      <Route path="/booking/datetime" element={<Booking />} />
-      <Route path="/booking/payment" element={<Booking />} />
-      <Route path="/booking/confirmation" element={<Booking />} />
-      <Route path="/artist-onboarding" element={<ArtistOnboarding />} /> 
-      <Route path="/admin-panel" element={<AdminPanel />} />*/}
-
+        <Route path="/" element={<Layout />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/contact" element={<Contact />} />
@@ -42,7 +30,7 @@ const AppRoutes = () => (
     <Route path="/admin/add-product" element={<AddProduct />} />
     <Route path="/admin/products" element={<ProductManagement />} />
     <Route path="/admin/orders" element={<OrderManagement />} />
-    <Route path="/" element={<Layout />} />
+
     <Route path="*" element={<Error404 />} />
   </Routes>
 );

@@ -15,11 +15,7 @@ const ProductCard = ({ data,  dispatch, setIsCartOpen }) => {
             alt={data.name}
             className="w-full h-48 object-cover"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 hover:opacity-50 transition-opacity duration-300 flex items-center justify-center">
-            <button className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors duration-300">
-              Quick Buy
-            </button>
-          </div>
+
         </div>
         <div className="p-4">
           <h3 className="text-xl font-semibold text-gray-700 mb-2">

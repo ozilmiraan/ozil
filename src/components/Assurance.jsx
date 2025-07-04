@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
-import { FaShieldAlt, FaHandsHelping, FaSmileBeam } from 'react-icons/fa';
+import { FaShieldAlt, FaSmileBeam } from 'react-icons/fa';
 const Assurance = () => {
   return (
     <section className="relative py-16 bg-gradient-to-t from-rose-gold-light to-pearlescent-white">

@@ -15,6 +15,10 @@ import OrderHistory from "../pages/OrderHistory";
 import AddProduct from "../pages/AddProduct";
 import ProductManagement from "../pages/ProductManagement";
 import OrderManagement from "../pages/OrderManagement";
+import About from "../pages/About";
+import Affiliate from "../pages/Affiliate";
+import Faq from "../pages/Faq";
+import Blogs from "../pages/Blogs";
 import App from "../App";
 
 const router = createBrowserRouter([
@@ -26,6 +30,10 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
       { path: "contact", element: <Contact /> },
+      { path: "about", element: <About /> },
+      { path: "affiliate", element: <Affiliate /> },
+      { path: "faq", element: <Faq /> },
+      { path: "blogs", element: <Blogs /> },
       { path: "product/:productId", element: <ProductDetails /> },
       { path: "cart", element: <Cart /> },
       { path: "checkout", element: <Checkout /> },

@@ -41,6 +41,18 @@ const Navbar = ({ toggleCart }) => {
           <Link to="/contact" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
             Contact
           </Link>
+          <Link to="/about" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
+            About Us
+          </Link>
+          <Link to="/affiliate" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
+            Affiliate Program
+          </Link>
+          <Link to="/faq" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
+            FAQ
+          </Link>
+          <Link to="/blogs" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
+            Blogs
+          </Link>
         </div>
       </div>
 

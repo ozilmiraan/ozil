@@ -42,7 +42,7 @@ const Blogs = () => {
               <div className="p-6">
                 <h2 className="font-montserrat font-bold text-2xl mb-2">{post.title}</h2>
                 <p className="font-poppins text-gray-600 mb-4">{post.content}</p>
-                <a href="#" className="text-rose-gold font-bold hover:underline">Read More →</a>
+                <a href="/" className="text-rose-gold font-bold hover:underline">Read More →</a>
               </div>
             </div>
           </Fade>

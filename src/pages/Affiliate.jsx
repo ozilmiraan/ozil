@@ -99,7 +99,7 @@ const Affiliate = () => {
           <p className="font-poppins text-lg text-gray-700 mb-8">
             Whether you blog, vlog, or just post on Instagram, you can start earning today.
           </p>
-          <a href="#" className="bg-secondary text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:scale-105">
+          <a href="/" className="bg-secondary text-white font-bold py-4 px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:scale-105">
             Apply Now & Become an OzilMakeup Affiliate Star!
           </a>
         </Fade>

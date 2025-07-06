@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/ozilmakeup_logo.png";
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faSearch, faUser, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import CartSidebar from "./CartSidebar";
 
 const Navbar = ({ toggleCart }) => {
   const [isProfileOpen, setIsProfileOpen] = React.useState(false);
   const [isCartOpen, setIsCartOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -16,28 +17,25 @@ const Navbar = ({ toggleCart }) => {
     setIsProfileOpen(!isProfileOpen);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <>
-    <nav className=" px-4 py-2 flex justify-between text-gray-700 items-center">
+    <nav className="px-4 py-2 flex justify-between text-gray-700 items-center relative">
       <Link to="/" className="text-xl font-bold  rounded-50px bg-gradient-to-r  shadow-neumorphic p-2">
         <img
           src={Logo}
           alt="Logo"
-          width="150"
-          height="40"
+          className="w-24 md:w-40"
         />
       </Link>
-      <div className="flex items-center">
+      <div className="hidden md:flex items-center">
         <div className="flex space-x-4 items-center font-bold text-md">
           <Link to="/" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary  focus:text-secondary active:text-secondary">
             Home
           </Link>
-          {/**          <Link to="/artists" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
-            Artists
-          </Link>
-          <Link to="/booking" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
-            Booking
-          </Link> */}
           <Link to="/contact" className="bg-transparent   p-2  hover:rounded-50px hover:text-secondary">
             Contact
           </Link>
@@ -57,7 +55,7 @@ const Navbar = ({ toggleCart }) => {
       </div>
 
       <div className="flex items-center gap-2">
-        <button className="rounded-full bg-gradient-to-r shadow-neumorphic  hover:bg-secondary hover:text-secondary focus:bg-secondary focus:text-white p-2">
+        <button className="hidden md:block rounded-full bg-gradient-to-r shadow-neumorphic  hover:bg-secondary hover:text-secondary focus:bg-secondary focus:text-white p-2">
           <FontAwesomeIcon icon={faSearch} className="h-4 w-6" />
         </button>
         <button
@@ -74,7 +72,7 @@ const Navbar = ({ toggleCart }) => {
             </span>
           )}
         </button>
-        <div className="relative">
+        <div className="relative hidden md:block">
           <button onClick={toggleProfile} className=" text-center rounded-full bg-gradient-to-r shadow-neumorphic  hover:bg-secondary hover:text-secondary focus:bg-secondary focus:text-white p-2">
             <FontAwesomeIcon icon={faUser} className="h-4 w-6" />
           </button>
@@ -95,13 +93,33 @@ const Navbar = ({ toggleCart }) => {
             </div>
           )}
         </div>
+        <div className="md:hidden">
+          <button onClick={toggleMenu} className="text-2xl">
+            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+          </button>
+        </div>
       </div>
+      {isMenuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-md z-20 md:hidden">
+          <div className="flex flex-col items-center space-y-4 py-4">
+            <Link to="/" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>Home</Link>
+            <Link to="/contact" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>Contact</Link>
+            <Link to="/about" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>About Us</Link>
+            <Link to="/affiliate" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>Affiliate Program</Link>
+            <Link to="/faq" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>FAQ</Link>
+            <Link to="/blogs" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>Blogs</Link>
+            <div className="border-t w-full my-2"></div>
+            <Link to="/login" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>Login</Link>
+            <Link to="/register" className="bg-transparent p-2 hover:text-secondary" onClick={toggleMenu}>Register</Link>
+          </div>
+        </div>
+      )}
     </nav>
  
     <CartSidebar
       isOpen={isCartOpen}
       onClose={() => setIsCartOpen(false)}
-      className="fixed top-0 right-0 w-96 h-screen bg-white shadow-md z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto"
+      className="fixed top-0 right-0 w-full md:w-96 h-screen bg-white shadow-md z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto"
     />
   </>
   );

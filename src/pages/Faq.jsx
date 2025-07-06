@@ -21,10 +21,10 @@ const Accordion = ({ title, children }) => {
 
 const Faq = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-6 md:p-12">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-4 sm:p-6 md:p-12">
       <div className="container mx-auto py-10 text-center">
         <Fade triggerOnce>
-          <h1 className="font-cinzel font-bold text-5xl text-rose-gold-dark mb-4">
+          <h1 className="font-cinzel font-bold text-4xl sm:text-5xl text-rose-gold-dark mb-4">
             ❓ Frequently Asked Questions (FAQs)
           </h1>
         </Fade>
@@ -32,8 +32,8 @@ const Faq = () => {
 
       <div className="container mx-auto max-w-4xl">
         <Fade triggerOnce>
-          <div className="bg-white/50 shadow-neumorphic rounded-lg p-8 backdrop-blur-sm">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-800 mb-6 flex items-center"><FaLeaf className="mr-4 text-rose-gold" />Product Related</h2>
+          <div className="bg-white/50 shadow-neumorphic rounded-lg p-6 sm:p-8 backdrop-blur-sm">
+            <h2 className="font-montserrat font-bold text-2xl sm:text-3xl text-gray-800 mb-6 flex items-center"><FaLeaf className="mr-4 text-rose-gold" />Product Related</h2>
             <Accordion title="Are your products suitable for sensitive skin?">
               <p>Yes! All OzilMakeup products are <strong>dermatologically tested</strong> and free from harsh chemicals, making them ideal for all skin types — including sensitive skin.</p>
             </Accordion>
@@ -47,8 +47,8 @@ const Faq = () => {
         </Fade>
 
         <Fade triggerOnce delay={200}>
-          <div className="bg-white/50 shadow-neumorphic rounded-lg p-8 backdrop-blur-sm mt-8">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-800 mb-6 flex items-center"><FaBox className="mr-4 text-rose-gold" />Order & Shipping</h2>
+          <div className="bg-white/50 shadow-neumorphic rounded-lg p-6 sm:p-8 backdrop-blur-sm mt-8">
+            <h2 className="font-montserrat font-bold text-2xl sm:text-3xl text-gray-800 mb-6 flex items-center"><FaBox className="mr-4 text-rose-gold" />Order & Shipping</h2>
             <Accordion title="How long does shipping take?">
               <p>Orders are shipped within <strong>1–2 business days</strong> and typically delivered within <strong>3–7 days</strong>, depending on your location.</p>
             </Accordion>
@@ -59,8 +59,8 @@ const Faq = () => {
         </Fade>
 
         <Fade triggerOnce delay={400}>
-          <div className="bg-white/50 shadow-neumorphic rounded-lg p-8 backdrop-blur-sm mt-8">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-800 mb-6 flex items-center"><FaCreditCard className="mr-4 text-rose-gold" />Payments & Returns</h2>
+          <div className="bg-white/50 shadow-neumorphic rounded-lg p-6 sm:p-8 backdrop-blur-sm mt-8">
+            <h2 className="font-montserrat font-bold text-2xl sm:text-3xl text-gray-800 mb-6 flex items-center"><FaCreditCard className="mr-4 text-rose-gold" />Payments & Returns</h2>
             <Accordion title="What payment methods do you accept?">
               <p>We accept <strong>UPI, debit/credit cards, COD (Cash on Delivery), and net banking</strong>.</p>
             </Accordion>
@@ -71,8 +71,8 @@ const Faq = () => {
         </Fade>
 
         <Fade triggerOnce delay={600}>
-          <div className="bg-white/50 shadow-neumorphic rounded-lg p-8 backdrop-blur-sm mt-8">
-            <h2 className="font-montserrat font-bold text-3xl text-gray-800 mb-6 flex items-center"><FaConciergeBell className="mr-4 text-rose-gold" />Services & More</h2>
+          <div className="bg-white/50 shadow-neumorphic rounded-lg p-6 sm:p-8 backdrop-blur-sm mt-8">
+            <h2 className="font-montserrat font-bold text-2xl sm:text-3xl text-gray-800 mb-6 flex items-center"><FaConciergeBell className="mr-4 text-rose-gold" />Services & More</h2>
             <Accordion title="Do you offer professional salon services?">
               <p>Yes! You can explore our <strong>OzilMakeup Service App</strong> to book verified makeup artists for weddings, events, and more.</p>
             </Accordion>

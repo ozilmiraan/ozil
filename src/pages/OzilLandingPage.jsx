@@ -6,7 +6,7 @@ import productImageUrl from "../assets/images/ozil-facewash.png"; // Example pat
 
 function OzilLandingPage() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-6 md:p-12">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-4 sm:p-6 md:p-12">
       {/* Optional: Subtle Bokeh Lights Background Elements */}
       <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/30 rounded-full filter blur-2xl opacity-50 -z-0"></div>
       <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-rose-gold/20 rounded-full filter blur-3xl opacity-60 -z-0"></div>
@@ -22,13 +22,13 @@ function OzilLandingPage() {
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16">
+      <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-12">
         {/* Left Side: Product Image */}
-        <div className="flex justify-center items-center order-1 md:order-1">
+        <div className="flex justify-center items-center order-2 md:order-1">
           <img
             src={productImageUrl} // Use the imported image URL
             alt="OZIL MAKEUP Rice Water Facewash"
-            className="w-48 sm:w-64 md:w-72 lg:w-80 h-auto rounded-lg
+            className="w-40 sm:w-56 md:w-72 lg:w-80 h-auto rounded-lg
                        drop-shadow-xl  Standard drop shadow hover:shadow-glow-white transition-shadow duration-300 
                        transform 
                       hover:scale-105
@@ -39,38 +39,38 @@ function OzilLandingPage() {
         </div>
 
         {/* Right Side: Text Content */}
-        <div className="text-center md:text-left order-2 md:order-2">
+        <div className="text-center md:text-left order-1 md:order-2">
           {/* Main Product Title */}
-          <h1 className="font-montserrat font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-800 mb-4 md:mb-6 leading-tight">
+          <h1 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800 mb-4 md:mb-6 leading-tight">
             RICE WATER <br className="hidden md:block" /> FACEWASH
           </h1>
 
           {/* Key Benefits */}
-          <ul className="space-y-3 inline-block md:block text-left mx-auto md:mx-0 max-w-xs md:max-w-none">
+          <ul className="space-y-3 inline-block md:block text-left mx-auto md:mx-0 max-w-xs md:max-w-none text-sm sm:text-base">
             <li className="flex items-center space-x-3">
-              <FaCheck className="text-rose-gold text-xl" />{" "}
+              <FaCheck className="text-rose-gold text-lg" />{" "}
               {/* Or use text-neon-pink */}
-              <span className="font-montserrat font-medium text-base md:text-lg text-gray-700">
+              <span className="font-montserrat font-medium text-gray-700">
                 Skin Lightening
               </span>
             </li>
             <li className="flex items-center space-x-3">
-              <FaCheck className="text-rose-gold text-xl" />
-              <span className="font-montserrat font-medium text-base md:text-lg text-gray-700">
+              <FaCheck className="text-rose-gold text-lg" />
+              <span className="font-montserrat font-medium text-gray-700">
                 Remove Acne & Pigmentation
               </span>
             </li>
             <li className="flex items-center space-x-3">
-              <FaCheck className="text-rose-gold text-xl" />
-              <span className="font-montserrat font-medium text-base md:text-lg text-gray-700">
+              <FaCheck className="text-rose-gold text-lg" />
+              <span className="font-montserrat font-medium text-gray-700">
                 Healthy Glow Skin
               </span>
             </li>
           </ul>
 
           {/* Optional Call to Action Button */}
-          <div className="mt-8 md:mt-10">
-            <button  className="bg-secondary text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:scale-105">
+          <div className="mt-6 md:mt-8">
+            <button  className="bg-secondary text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base">
               Shop Now
             </button>
           </div>

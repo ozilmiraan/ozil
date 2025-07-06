@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-200 py-10 px-6">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-800">
+    <footer className="bg-gray-200 py-10 px-4 sm:px-6">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left text-gray-800">
         
         {/* Know Us Better Section */}
         <div>
@@ -44,11 +44,11 @@ const Footer = () => {
         {/* Sign Up for Updates & Social Media */}
         <div>
           <h3 className="font-bold text-lg mb-3">Sign Up For Updates</h3>
-          <div className="flex">
+          <div className="flex justify-center sm:justify-start">
             <input 
               type="email" 
               placeholder="Enter Your Email" 
-              className="border border-pink-300 text-sm px-3 py-2 w-full outline-none rounded-l-md"
+              className="border border-pink-300 text-sm px-3 py-2 w-full max-w-xs outline-none rounded-l-md"
             />
             <button className="bg-pink-500 text-white px-4 py-2 text-sm rounded-r-md hover:bg-pink-600 transition">
               SUBSCRIBE
@@ -57,7 +57,7 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <h3 className="font-bold text-lg mt-5">Follow Us</h3>
-          <div className="flex space-x-3 mt-2">
+          <div className="flex space-x-3 mt-2 justify-center sm:justify-start">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="py-2 px-4 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition">
               <i className="fab fa-facebook-f"></i>
             </a>

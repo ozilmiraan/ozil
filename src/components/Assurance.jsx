@@ -14,7 +14,7 @@ const Assurance = () => {
           <Slide triggerOnce direction="right">
             <div>
               <h2 className="font-montserrat font-bold text-4xl text-rose-gold-dark mb-6">
-                Your Assurance of Safety &amp; Delight
+                Your Assurance of Safety & Delight
               </h2>
               <div className="space-y-8">
                 <Fade triggerOnce delay={200}>

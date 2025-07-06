@@ -26,23 +26,23 @@ const blogPosts = [
 
 const Blogs = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-6 md:p-12">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-4 sm:p-6 md:p-12">
       <div className="container mx-auto py-10 text-center">
         <Fade triggerOnce>
-          <h1 className="font-cinzel font-bold text-5xl text-rose-gold-dark mb-4">
+          <h1 className="font-cinzel font-bold text-4xl sm:text-5xl text-rose-gold-dark mb-4">
             📝 Blogs – Glowing Insights by OzilMakeup
           </h1>
         </Fade>
       </div>
-      <div className="container mx-auto grid md:grid-cols-2 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {blogPosts.map((post, index) => (
           <Fade triggerOnce delay={index * 200} key={index}>
             <div className="bg-white/50 shadow-neumorphic rounded-lg overflow-hidden backdrop-blur-sm">
               <img src={post.image} alt={post.title} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <h2 className="font-montserrat font-bold text-2xl mb-2">{post.title}</h2>
-                <p className="font-poppins text-gray-600 mb-4">{post.content}</p>
-                <a href="/" className="text-rose-gold font-bold hover:underline">Read More →</a>
+              <div className="p-4 sm:p-6">
+                <h2 className="font-montserrat font-bold text-xl sm:text-2xl mb-2">{post.title}</h2>
+                <p className="font-poppins text-gray-600 mb-4 text-sm sm:text-base">{post.content}</p>
+                <a href="/" className="text-rose-gold font-bold hover:underline text-sm sm:text-base">Read More →</a>
               </div>
             </div>
           </Fade>

@@ -3,10 +3,11 @@ import { FaCheck } from "react-icons/fa"; // Using Font Awesome check icon
 
 // Import your product image - adjust path as needed
 import productImageUrl from "../assets/images/ozil-facewash.png"; // Example path
+// import heroBG from '../assets/ozilHeroBG.jpg'
 
-function OzilLandingPage() {
+function OzilLandingPage({ onShopNow }) {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-t from-rose-gold via-rose-gold-light to-pearlescent-white p-4 sm:p-6 md:p-12">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden p-4 sm:p-6 md:p-12 bg-[url('/src/assets/ozilHeroBG.jpg')] bg-cover bg-center min-h-screen">
       {/* Optional: Subtle Bokeh Lights Background Elements */}
       <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-white/30 rounded-full filter blur-2xl opacity-50 -z-0"></div>
       <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-rose-gold/20 rounded-full filter blur-3xl opacity-60 -z-0"></div>
@@ -70,7 +71,10 @@ function OzilLandingPage() {
 
           {/* Optional Call to Action Button */}
           <div className="mt-6 md:mt-8">
-            <button  className="bg-secondary text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base">
+            <button
+              onClick={onShopNow}
+              className="bg-secondary text-white font-bold py-2 px-6 sm:py-3 sm:px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:scale-105 text-sm sm:text-base"
+            >
               Shop Now
             </button>
           </div>

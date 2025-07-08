@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 // import {useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 // import { addItem } from '../redux/cartSlice';
@@ -12,15 +12,22 @@ import Assurance from '../components/Assurance';
 
 const Layout = () => {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const productsRef = useRef(null);
+  // const navigate = useNavigate();
   // const [isLoggedIn, setIsLoggedIn] = useState(
   //   localStorage.getItem('isLoggedIn') === 'true'
   // );
   // const [userMobileNumber, setUserMobileNumber] = useState(
   //   localStorage.getItem('mobileNumber') || ''
   // );
+
+  const handleScrollToProducts = () => {
+    if (productsRef.current) {
+      productsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -55,8 +62,8 @@ const Layout = () => {
         className="fixed top-0 right-0 w-96 h-screen bg-white shadow-md z-50 transform transition-transform duration-300 ease-in-out overflow-y-auto"
       />
 
-    <OzilLandingPage/>
-      <section className="container mx-auto py-8">
+    <OzilLandingPage onShopNow={handleScrollToProducts}/>
+      <section ref={productsRef} className="container mx-auto py-8 px-6">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Our Beauty Products
         </h2>
@@ -73,7 +80,7 @@ const Layout = () => {
         </div>
       </section>
 
-      <section className="py-8">
+      <section className="py-8 px-6">
         <ReviewCarousel products={products} />
       </section>
 

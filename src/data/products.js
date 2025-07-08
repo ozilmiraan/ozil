@@ -1,10 +1,15 @@
+
 import Face from '../assets/face-serum.jpg';
 import Glow from '../assets/instant-glow.jpg';
 import Nourishment from '../assets/nourishment.jpg';
+
+
 const products = {
+
   1: {
     id: 1,
     name: 'Facial Kit',
+    category: 'Skincare',
     shortDescription: 'A complete facial kit for glowing skin.',
     originalPrice: 49.99,
     currentPrice: 39.99,

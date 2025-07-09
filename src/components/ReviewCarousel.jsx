@@ -34,10 +34,10 @@ const ReviewCarousel = ({ products }) => {
   const reviews = Object.values(products).flatMap((product) => product.reviews);
 
   // Calculate the number of visible reviews
-  const visibleReviews = reviews.slice(
-    currentIndex,
-    currentIndex + visibleCount
-  );
+  // const visibleReviews = reviews.slice(
+  //   currentIndex,
+  //   currentIndex + visibleCount
+  // );
 
   // Handle Next and Previous buttons
   const handleNext = () => {

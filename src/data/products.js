@@ -1,4 +1,4 @@
-import Face from "../assets/face-serum.jpg";
+
 import Glow from "../assets/instant-glow.jpg";
 import Nourishment from "../assets/nourishment.jpg";
 

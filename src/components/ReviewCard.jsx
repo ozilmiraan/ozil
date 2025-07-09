@@ -5,8 +5,9 @@ const { review, index } = props;
 
   return (
     <>
-    <div key={"review_"+index} className="bg-white rounded-full shadow-neumorphic px-10 py-4 mb-4 w-fit flex items-center">
-    <img src={review.profileImage} alt="Profile" className="w-20 h-20 rounded-full mr-2 shadow-md"  />
+    <div key={"review_"+index} 
+    className="bg-white rounded-full shadow-neumorphic w-full max-w-md mx-auto px-6 py-4 flex items-center gap-4">
+    <img src={review.profileImage} alt="Profile" className="w-16 h-16 rounded-full shadow-md"  />
     <div>
     <p className="text-gray-700 font-semibold">{review.author}</p>
       <div className="flex items-center mb-2">

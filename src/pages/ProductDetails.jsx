@@ -19,6 +19,8 @@ const ProductDetails = () => {
   const [zoomedImage, setZoomedImage] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0); // <-- Add this line
+
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
   // const [userMobileNumber, setUserMobileNumber] = useState('');
 
@@ -34,6 +36,10 @@ const ProductDetails = () => {
     };
 
     fetchProduct();
+  }, [productId]);
+
+  useEffect(() => {
+    setSelectedImageIndex(0); // Reset to first image when product changes
   }, [productId]);
 
   const toggleCart = () => {
@@ -83,9 +89,9 @@ const ProductDetails = () => {
         {/* Left Side: Product Image */}
         <div className="relative">
           <img
-            src={product.productImages[0]}
+            src={product.productImages[selectedImageIndex]}
             alt={product.name}
-            className={`w-full h-96 object-cover rounded-lg shadow-md transition-transform duration-300 ${
+            className={`w-full h-96 bg-gray-200 object-contain rounded-lg shadow-md transition-transform duration-300 ${
               zoomedImage
                 ? "scale-150 transform-origin-top-left cursor-zoom-out"
                 : "cursor-zoom-in"
@@ -99,7 +105,12 @@ const ProductDetails = () => {
                 key={index}
                 src={image}
                 alt={`${product.name} - ${index + 1}`}
-                className="w-20 h-20 object-cover rounded-md cursor-pointer"
+                className={`w-20 h-20 object-cover rounded-md cursor-pointer border-2 ${
+                  selectedImageIndex === index
+                    ? "border-secondary"
+                    : "border-transparent"
+                }`}
+                onClick={() => setSelectedImageIndex(index)}
               />
             ))}
           </div>
@@ -159,34 +170,6 @@ const ProductDetails = () => {
               </div>
             ))}
           </div>
-
-          {/* Delivery Options */}
-          <div className="mb-4">
-            <h2 className="text-lg font-semibold text-gray-700 mb-2">
-              Delivery Options
-            </h2>
-            <div className="flex items-center">
-              <input
-                type="text"
-                placeholder="Enter pincode"
-                className="shadow-md bg-slate-100 focus:ring-indigo-500 focus:border-pink-600 block w-full sm:text-sm border-gray-600 p-3 rounded-full mr-2"
-                id="pincode"
-              />
-              <button
-                className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
-                onClick={() => {
-                  const pincode = document.getElementById("pincode").value;
-                  if (pincode.startsWith("160")) {
-                    alert("Delivery available in Chandigarh!");
-                  } else {
-                    alert("Delivery not available in this area.");
-                  }
-                }}
-              >
-                Check
-              </button>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -196,14 +179,13 @@ const ProductDetails = () => {
         <div className="lg:col-span-2 space-y-6">
           <ProductAccordion title="How to Use">
             <ol className="list-decimal list-inside text-sm text-gray-700 space-y-1">
-          {product.usageInstructions.map((instruction, index) => (
-            <li key={index} className="text-gray-600 text-sm mb-2">
-              {instruction}
-            </li>
-          ))}
+              {product.usageInstructions.map((instruction, index) => (
+                <li key={index} className="text-gray-600 text-sm mb-2">
+                  {instruction}
+                </li>
+              ))}
             </ol>
           </ProductAccordion>
-
 
           <ProductAccordion title="Ingredients">
             {/* Ingredients & Product Benefits Section */}
@@ -259,9 +241,35 @@ const ProductDetails = () => {
             <li>🚚 Delivery in 3–5 days</li>
             <li>🔁 7-day return (sealed items)</li>
           </ul>
+          {/* Delivery Options */}
+          <div className="mt-6">
+            <h2 className="text-lg font-semibold text-gray-700 mb-2">
+              Delivery Options
+            </h2>
+            <div className="flex items-center">
+              <input
+                type="text"
+                placeholder="Enter pincode"
+                className=" bg-slate-100 shadow-sm focus:ring-indigo-500 focus:border-pink-600 block w-full sm:text-sm border-gray-600 p-3 rounded mr-2"
+                id="pincode"
+              />
+              <button
+                className="bg-green-500 shadow-md text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+                onClick={() => {
+                  const pincode = document.getElementById("pincode").value;
+                  if (pincode.startsWith("160")) {
+                    alert("Delivery available in Chandigarh!");
+                  } else {
+                    alert("Delivery not available in this area.");
+                  }
+                }}
+              >
+                Check
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-
 
       {/* Similar & Recommended Products Section */}
       <section className="mb-8">
@@ -280,7 +288,7 @@ const ProductDetails = () => {
         </div>
       </section>
 
-            {/* Customer Reviews & Ratings Section */}
+      {/* Customer Reviews & Ratings Section */}
       <section className="mb-8">
         <ReviewCarousel products={products} />
       </section>

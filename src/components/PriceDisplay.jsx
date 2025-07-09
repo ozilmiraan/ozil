@@ -17,3 +17,5 @@ const PriceDisplay = ({ originalPrice, currentPrice, discountPercentage }) => {
 };
 
 export default PriceDisplay;
+
+

@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
+import { clearCart } from "../redux/cartSlice";
 
 import {  CreditCard, Wallet, Truck,  } from "lucide-react";
 import OrderConfirmationModal from '../components/OrderConfirmationModal';
@@ -8,6 +9,7 @@ import { useState } from 'react';
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -16,6 +18,29 @@ const Checkout = () => {
   const [city, setCity] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('');
   const [deliveryAvailable, setDeliveryAvailable] = useState(null);
+  const [showAddressForm, setShowAddressForm] = useState(false);
+  const [savedAddress, setSavedAddress] = useState(null);
+
+  React.useEffect(() => {
+    const storedAddress = JSON.parse(localStorage.getItem("address"));
+    if (storedAddress) {
+      setSavedAddress(storedAddress);
+      setName(storedAddress.name);
+      setPhone(storedAddress.phone);
+      setAddress(storedAddress.address);
+      setPincode(storedAddress.pincode);
+      setCity(storedAddress.city);
+    } else {
+      setShowAddressForm(true);
+    }
+  }, []);
+
+  const handleSaveAddress = () => {
+    const newAddress = { name, phone, address, pincode, city };
+    localStorage.setItem("address", JSON.stringify(newAddress));
+    setSavedAddress(newAddress);
+    setShowAddressForm(false);
+  };
 
   const validatePincode = (pincode) => {
     // Basic pincode validation (6 digits)
@@ -47,6 +72,28 @@ const Checkout = () => {
   const finalAmount = subtotal - discount;
 
   const handlePlaceOrder = () => {
+    if (showAddressForm) {
+      handleSaveAddress();
+    }
+    const newOrder = {
+      id: Date.now(),
+      date: new Date().toISOString().slice(0, 10),
+      products: cartItems.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        price: item.currentPrice,
+      })),
+      totalAmount: finalAmount,
+      paymentMethod: paymentMethod,
+      orderStatus: "Pending",
+      trackingNumber: `TRACK${Date.now()}`,
+      shippingAddress: savedAddress || { name, phone, address, pincode, city },
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    localStorage.setItem("orders", JSON.stringify([...existingOrders, newOrder]));
+    
+    dispatch(clearCart());
     setIsModalOpen(true);
   };
 
@@ -76,9 +123,21 @@ const Checkout = () => {
           <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
             <Truck className="text-green-500" /> Deliver to
           </h2>
-          <div className="p-4 border rounded-md bg-gray-50">
-            {/* Address Form */}
-            
+          {savedAddress && !showAddressForm ? (
+            <div className="p-4 border rounded-md bg-gray-50">
+              <p>{savedAddress.name}</p>
+              <p>{savedAddress.phone}</p>
+              <p>{savedAddress.address}</p>
+              <p>{savedAddress.city} - {savedAddress.pincode}</p>
+              <button
+                onClick={() => setShowAddressForm(true)}
+                className="text-blue-500 hover:underline mt-2"
+              >
+                Change Address
+              </button>
+            </div>
+          ) : (
+            <form className="p-4 border rounded-md bg-gray-50">
               <div className="mt-4">
                 <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
                   Name:
@@ -151,10 +210,15 @@ const Checkout = () => {
                   onChange={(e) => setCity(e.target.value)}
                 />
               </div>
-              
-            
-            
-          </div>
+              <button
+                type="button"
+                onClick={handleSaveAddress}
+                className="bg-blue-500 text-white py-2 px-4 rounded-md mt-4 hover:bg-blue-600"
+              >
+                Save Address
+              </button>
+            </form>
+          )}
         </motion.div>
 
         {/* Payment Methods */}

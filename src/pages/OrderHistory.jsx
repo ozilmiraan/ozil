@@ -1,37 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { IndianRupee, Download, Truck } from "lucide-react";
 import jsPDF from 'jspdf';
 
 const OrderHistory = () => {
-  // Mock order data
-  const orders = [
-    {
-      id: 1,
-      date: "2025-03-25",
-      products: [
-        { name: "Face Serum", quantity: 1, price: 500 },
-        { name: "Instant Glow Cream", quantity: 2, price: 300 },
-      ],
-      totalAmount: 1100,
-      paymentMethod: "UPI",
-      orderStatus: "Delivered",
-      trackingNumber: "TRACK123",
-    },
-    {
-      id: 2,
-      date: "2025-03-20",
-      products: [
-        { name: "Nourishment Oil", quantity: 1, price: 400 },
-      ],
-      totalAmount: 400,
-      paymentMethod: "Credit Card",
-      orderStatus: "Shipped",
-      trackingNumber: "TRACK456",
-    },
-  ];
-
+  const [orders, setOrders] = useState([]);
   const [statusFilter, setStatusFilter] = useState("");
+
+  useEffect(() => {
+    const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    setOrders(storedOrders);
+  }, []);
 
   const getStatusBadge = (status) => {
     const statusClasses = {
@@ -106,6 +85,15 @@ const OrderHistory = () => {
           <div className="mb-4">
             <h3 className="text-lg font-semibold">Order Details:</h3>
             <p>Order ID: {order.id}</p>
+            {order.shippingAddress && (
+              <div className="mb-2">
+                <h4 className="font-semibold">Shipping Address:</h4>
+                <p>{order.shippingAddress.name}</p>
+                <p>{order.shippingAddress.phone}</p>
+                <p>{order.shippingAddress.address}</p>
+                <p>{order.shippingAddress.city} - {order.shippingAddress.pincode}</p>
+              </div>
+            )}
             {order.products.map((product, index) => (
               <p key={index}>
                 {product.name} x {product.quantity} - <IndianRupee className="inline-block w-4 h-4" />

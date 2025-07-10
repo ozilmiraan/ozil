@@ -1,5 +1,5 @@
 
-import DeTan from "../assets/images/de-tan/deTanBanner.jpg";
+import DeTanKit from "../assets/images/de-tan/deTanBanner.jpg";
 import FacialKit from "../assets/images/facial-kit/FACIAL_KIT.jpg";
 import FacialKitProduct from "../assets/images/facial-kit/facialKit1.jpg";
 
@@ -128,7 +128,7 @@ const products = {
         answer: "Yes, but perform a patch test before use.",
       },
     ],
-    productImages: [DeTan, "/assets/lemon.png", "/assets/turmeric.png"],
+    productImages: [DeTanKit, "/assets/lemon.png", "/assets/turmeric.png"],
   },
   3: {
     id: 3,

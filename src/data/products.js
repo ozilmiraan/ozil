@@ -1,6 +1,7 @@
 
-import Glow from "../assets/instant-glow.jpg";
-import Nourishment from "../assets/nourishment.jpg";
+import DeTan from "../assets/images/de-tan/deTanBanner.jpg";
+import FacialKit from "../assets/images/facial-kit/FACIAL_KIT.jpg";
+import FacialKitProduct from "../assets/images/facial-kit/facialKit1.jpg";
 
 import FaceWashMain from '../assets/images/FaceWash/faceWash_main.jpg';
 import FaceWashAd from '../assets/images/FaceWash/faceWash_ad.jpg';
@@ -127,11 +128,11 @@ const products = {
         answer: "Yes, but perform a patch test before use.",
       },
     ],
-    productImages: [Glow, "/assets/lemon.png", "/assets/turmeric.png"],
+    productImages: [DeTan, "/assets/lemon.png", "/assets/turmeric.png"],
   },
   3: {
     id: 3,
-    name: "Nourishment Kit",
+    name: "Facial Kit",
     shortDescription: "Deeply nourishes and revitalizes your skin.",
     originalPrice: 69.99,
     currentPrice: 59.99,
@@ -187,7 +188,8 @@ const products = {
       },
     ],
     productImages: [
-      Nourishment,
+      FacialKit,
+      FacialKitProduct,
       "/assets/shea-butter.png",
       "/assets/argan-oil.png",
     ],

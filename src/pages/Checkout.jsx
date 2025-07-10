@@ -212,7 +212,7 @@ const Checkout = () => {
               />
               Netbanking
             </label>
-            <label className="flex items-center mb-2">
+   {/** <label className="flex items-center mb-2">
               <input
                 type="radio"
                 name="payment"
@@ -222,7 +222,7 @@ const Checkout = () => {
                 onChange={() => setPaymentMethod('cash-on-delivery')}
               />
               Cash on Delivery
-            </label>
+            </label> */}
           </div>
         </motion.div>
 

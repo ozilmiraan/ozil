@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.93d890de.css",
-    "main.js": "/static/js/main.5491f2c8.js",
+    "main.css": "/static/css/main.78a6c137.css",
+    "main.js": "/static/js/main.3e2c8dea.js",
     "static/js/239.c4f00478.chunk.js": "/static/js/239.c4f00478.chunk.js",
     "static/js/977.aeb1d7e0.chunk.js": "/static/js/977.aeb1d7e0.chunk.js",
     "static/js/455.7094cced.chunk.js": "/static/js/455.7094cced.chunk.js",
     "static/media/nourishment.jpg": "/static/media/nourishment.fdc44db781d1564a8ea1.jpg",
     "static/media/instant-glow.jpg": "/static/media/instant-glow.0d20978d78d943649745.jpg",
-    "static/media/face-serum.jpg": "/static/media/face-serum.f5e052645d65f0558c32.jpg",
+    "static/media/faceWash_ad.jpg": "/static/media/faceWash_ad.2da16920e1211109cc54.jpg",
+    "static/media/faceWash_info.jpg": "/static/media/faceWash_info.2d072237940d90d63afe.jpg",
+    "static/media/faceWash_main.jpg": "/static/media/faceWash_main.2cfe5fe6f3d403c18b13.jpg",
+    "static/media/faceWash_benefits.jpg": "/static/media/faceWash_benefits.50f7634708086bc47afc.jpg",
     "static/media/ozil-facewash.png": "/static/media/ozil-facewash.eb3b693af04971771c33.png",
+    "static/media/faceWash_model.jpg": "/static/media/faceWash_model.3317dc0d9b9648c9f7cb.jpg",
     "static/media/ozilmakeup_logo.png": "/static/media/ozilmakeup_logo.c0b847862798d5017784.png",
+    "static/media/ozilHeroBG.jpg": "/static/media/ozilHeroBG.36d7e66ae5a1a01cc5e7.jpg",
     "index.html": "/index.html",
-    "main.93d890de.css.map": "/static/css/main.93d890de.css.map",
-    "main.5491f2c8.js.map": "/static/js/main.5491f2c8.js.map",
+    "main.78a6c137.css.map": "/static/css/main.78a6c137.css.map",
+    "main.3e2c8dea.js.map": "/static/js/main.3e2c8dea.js.map",
     "239.c4f00478.chunk.js.map": "/static/js/239.c4f00478.chunk.js.map",
     "455.7094cced.chunk.js.map": "/static/js/455.7094cced.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93d890de.css",
-    "static/js/main.5491f2c8.js"
+    "static/css/main.78a6c137.css",
+    "static/js/main.3e2c8dea.js"
   ]
 }

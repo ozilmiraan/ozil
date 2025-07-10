@@ -63,14 +63,17 @@ const ProductDetails = () => {
     setZoomedImage(!zoomedImage);
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.preventDefault();
     dispatch(addItem(product));
-    alert("Product added to cart successfully!");
+    setIsCartOpen(true);
+
   };
 
-  const handleBuyNow = () => {
+  const handleBuyNow = (e) => {
+    e.preventDefault();
     dispatch(addItem(product));
-    navigate("/booking/payment"); // Assuming '/checkout' is the checkout page
+    navigate("/checkout"); // Assuming '/checkout' is the checkout page
   };
 
   if (!product) {

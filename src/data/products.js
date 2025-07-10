@@ -1,5 +1,5 @@
 
-import DeTanKit from "../assets/images/de-tan/deTanBanner.jpg";
+import DeTanKit from "../assets/images/de-tan/detanBanner.jpg";
 import FacialKit from "../assets/images/facial-kit/FACIAL_KIT.jpg";
 import FacialKitProduct from "../assets/images/facial-kit/facialKit1.jpg";
 

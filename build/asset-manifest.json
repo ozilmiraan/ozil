@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb2ba964.css",
+    "main.js": "/static/js/main.2d37e0a0.js",
+    "static/js/239.c4f00478.chunk.js": "/static/js/239.c4f00478.chunk.js",
+    "static/js/977.aeb1d7e0.chunk.js": "/static/js/977.aeb1d7e0.chunk.js",
+    "static/js/455.88357c78.chunk.js": "/static/js/455.88357c78.chunk.js",
+    "static/media/faceWash_main.jpg": "/static/media/faceWash_main.ef8a641c05ed8a17bf77.jpg",
+    "static/media/FACIAL_KIT.jpg": "/static/media/FACIAL_KIT.9f85f3034f4af373e718.jpg",
+    "static/media/detanBanner.jpg": "/static/media/detanBanner.535e8b015994ceefddc4.jpg",
+    "static/media/facialKit1.jpg": "/static/media/facialKit1.a776a57fcd6b760d43c7.jpg",
+    "static/media/faceWash_ad.jpg": "/static/media/faceWash_ad.2da16920e1211109cc54.jpg",
+    "static/media/faceWash_info.jpg": "/static/media/faceWash_info.2d072237940d90d63afe.jpg",
+    "static/media/faceWash_benefits.jpg": "/static/media/faceWash_benefits.50f7634708086bc47afc.jpg",
+    "static/media/ozil-facewash.png": "/static/media/ozil-facewash.eb3b693af04971771c33.png",
+    "static/media/faceWash_model.jpg": "/static/media/faceWash_model.3317dc0d9b9648c9f7cb.jpg",
+    "static/media/ozilmakeup_logo.png": "/static/media/ozilmakeup_logo.c0b847862798d5017784.png",
+    "static/media/ozilHeroBG.jpg": "/static/media/ozilHeroBG.36d7e66ae5a1a01cc5e7.jpg",
+    "index.html": "/index.html",
+    "main.eb2ba964.css.map": "/static/css/main.eb2ba964.css.map",
+    "main.2d37e0a0.js.map": "/static/js/main.2d37e0a0.js.map",
+    "239.c4f00478.chunk.js.map": "/static/js/239.c4f00478.chunk.js.map",
+    "455.88357c78.chunk.js.map": "/static/js/455.88357c78.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb2ba964.css",
+    "static/js/main.2d37e0a0.js"
+  ]
+}
